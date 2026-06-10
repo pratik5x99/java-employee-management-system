@@ -17,10 +17,6 @@ public class DashboardServlet extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
         HttpSession session = req.getSession(false);
 
-        if (session == null || session.getAttribute("username") == null) {
-            res.sendRedirect("index.html");
-            return;
-        }
 
         String userName = (String) session.getAttribute("username");
 
